@@ -56,18 +56,24 @@ pub fn run() {
     // 文字列スライス
     let s1 = "helloこんにちは挨拶";
     let s2 = "hello";
-    println!("Static address of s1 {:p}", &s1);
-    println!("Static address of s2 {:p}", &s1);
+
+    // スタック領域のアドレス
+    println!("Stack address of s1 {:p}", &s1);
+    println!("Stack address of s2 {:p}", &s1);
+
+    // 静的領域に保存されている実データの先頭のアドレス
     println!("Static memory address of s1 {:?}", s1.as_ptr());
     println!("Static memory address of s2 {:?}", s2.as_ptr());
+
+    // 静的領域の容量
     println!("Static memory length of s1 {}", &s1.len());
     println!("Static memory length of s2 {}", &s2.len());
 
     // string型
     let mut s1 = String::from("hello");
     let mut s2 = String::from("helloworld");
-    println!("Static address of s1 {:p}", &s1);
-    println!("Static address of s2 {:p}", &s2);
+    println!("Stack address of s1 {:p}", &s1);
+    println!("Stack address of s2 {:p}", &s2);
 
     // heap領域に格納されている文字列の先頭のアドレス
     println!("Heap memory address of s1 {:p}", s1.as_ptr());
